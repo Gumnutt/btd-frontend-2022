@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
+* {
+  padding: var(--size-fluid-0);
+  margin: var(--size-fluid-0);
+  box-sizing: border-box;
+  font-family: "Nunito", system-ui;
+  font-weight: var(--font-weight-4);
+}
+
+html {
+  background: white;
+  color: var(--gray-8);
+  font-family: var(--font-sans);
+
+  @media (--OSdark) {
+    background: var(--gray-9);
+    color: var(--gray-1);
+  }
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+}

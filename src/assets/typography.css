@@ -1,0 +1,15 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: calc(var(--font-size) * var(--font-lineheight-4));
+}
+h1 {
+  --font-size: var(--font-size-fluid-3);
+}
+p {
+  margin-bottom: calc(var(--font-size) * var(--font-lineheight-4));
+  line-height: var(--font-lineheight-4);
+}
