@@ -23,13 +23,13 @@ export const usePostStore = defineStore({
         this.loading = false
       }
     },
-    async fetchPost(id) {
+    async fetchPost(slug) {
       this.post = null
       this.loading = true
       try {
-        this.post = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items/posts/${id}`)
+        this.post = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items/posts?filter[slug][_contains]=${slug}`)
           .then((response) => response.json())
-          .then((r) => r.data)
+          .then((r) => r.data[0])
       } catch (error) {
         this.error = error
       } finally {

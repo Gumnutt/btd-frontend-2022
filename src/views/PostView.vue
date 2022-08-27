@@ -3,12 +3,11 @@ import { useRoute } from "vue-router"
 import { storeToRefs } from "pinia"
 import { usePostStore } from "../stores/posts"
 import Post from "../components/Post.vue"
-
+defineProps(["id"])
 const route = useRoute()
 const { post, loading, error } = storeToRefs(usePostStore())
 const { fetchPost } = usePostStore()
-console.log(route.params.id)
-fetchPost(route.params.id)
+fetchPost(route.params.slug)
 </script>
 
 <template>
