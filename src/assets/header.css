@@ -1,7 +1,6 @@
 header {
   text-align: center;
   color: var(--gray-9);
-  padding: var(--size-fluid-2);
   nav {
     display: flex;
     justify-content: end;

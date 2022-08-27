@@ -9,6 +9,7 @@ import { RouterLink, RouterView } from "vue-router"
       <RouterLink to="/posts">Posts</RouterLink>
     </nav>
   </header>
-
-  <RouterView />
+  <transition name="fade">
+    <router-view />
+  </transition>
 </template>

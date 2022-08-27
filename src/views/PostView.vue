@@ -7,7 +7,6 @@ import Post from "../components/Post.vue"
 const route = useRoute()
 const { post, loading, error } = storeToRefs(usePostStore())
 const { fetchPost } = usePostStore()
-console.log(route.params.id)
 fetchPost(route.params.id)
 </script>
 

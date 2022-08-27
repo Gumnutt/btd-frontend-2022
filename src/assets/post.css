@@ -1,11 +1,12 @@
 .post {
   --font-size: var(--font-size-3);
-  --rhythm: calc(var(--font-size-3) * var(--font-lineheight-4));
+  --rhythm: calc(var(--font-size) * var(--font-lineheight-4));
   display: grid;
   font-size: var(--font-size);
   line-height: var(--font-lineheight-4);
   grid-template-columns: minmax(0, 1fr) minmax(0, calc(var(--rhythm) * 1)) minmax(0, 54ch) minmax(0, calc(var(--rhythm) * 1)) minmax(0, 1fr);
-  * {
+  *,
+  * > * {
     grid-column: 3;
   }
   .post--header {
@@ -19,5 +20,30 @@
   }
   img {
     grid-column: 2/5;
+  }
+  pre {
+    --bg-color: #282a36;
+    --syntax-bg: hsl(210deg, 30%, 12%);
+    --syntax-highlight: hsl(210deg, 30%, 18%);
+    --syntax-txt: #fff;
+    --syntax-comment: #6c8998;
+    --syntax-prop: #ff39a8;
+    --syntax-bool: #ffd600;
+    --syntax-val: #61747d;
+    --syntax-str: rgb(155, 109, 255);
+    --syntax-name: #c653ff;
+    --syntax-del: #ff5555;
+    --syntax-regex: #ffd700;
+    --syntax-fn: rgb(0, 190, 255);
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: var(--bg-color);
+    grid-column: 2/5;
+    margin-top: var(--rhythm);
+    padding: var(--rhythm);
+    background: var(--bg-color);
+    border-radius: var(--radius-3);
+    color: var(--syntax-txt);
   }
 }

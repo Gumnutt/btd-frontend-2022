@@ -3,13 +3,32 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  margin-bottom: calc(var(--font-size) * var(--font-lineheight-4));
+h6,
+p {
+  margin-top: var(--rhythm);
+  font-size: var(--font-size);
 }
 h1 {
   --font-size: var(--font-size-fluid-3);
 }
+h2 {
+  --rhythm: calc(var(--font-size) * var(--font-lineheight-4));
+  --font-size: var(--font-size-6);
+}
+h3,
+h4 {
+  --font-size: var(--font-size-fluid-1);
+}
+h5,
+h6 {
+  --font-size: var(--font-size-fluid-0);
+}
+h4,
+h6 {
+  font-weight: var(--font-weight-7);
+}
+
 p {
-  margin-bottom: calc(var(--font-size) * var(--font-lineheight-4));
+  --font-size: var(--font-size-3);
   line-height: var(--font-lineheight-4);
 }

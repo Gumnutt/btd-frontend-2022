@@ -11,6 +11,7 @@ import { VitePluginFonts } from "vite-plugin-fonts"
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  assetsInclude: ["**/*.mdx"],
   css: {
     postcss: {
       plugins: [
@@ -27,7 +28,7 @@ export default defineConfig({
     vueJsx(),
     VitePluginFonts({
       google: {
-        families: ["Nunito"],
+        families: ["Nunito", "Space Mono"],
       },
     }),
   ],
