@@ -8,8 +8,14 @@ header {
     a {
       text-decoration: none;
       color: var(--gray-8);
+      &:visited {
+        color: var(--gray-8);
+      }
       @media (--OSdark) {
         color: var(--gray-1);
+        &:visited {
+          color: var(--gray-1);
+        }
       }
     }
   }
