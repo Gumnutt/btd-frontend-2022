@@ -6,6 +6,7 @@ import { marked } from "marked"
 import DOMPurify from "dompurify"
 import Markdown from "vue3-markdown-it"
 import Prism from "prismjs"
+import moment from "moment"
 
 defineProps(["post"])
 
@@ -13,9 +14,14 @@ Prism.highlightAll()
 </script>
 
 <template>
-  <div class="wrapper post">
+  <div class="post">
     <div class="post--header">
       <div class="post--header-inner">
+        <div class="header--data">
+          <time :datetime="post.date_created">{{ published }}</time>
+          <span>~</span>
+          <span>{{ TimeToRead }} min read</span>
+        </div>
         <h1>{{ post.title }}</h1>
       </div>
     </div>
@@ -25,9 +31,15 @@ Prism.highlightAll()
 
 <script>
 export default {
+  data() {
+    return {
+      TimeToRead: Math.ceil(marked(this.post.text).trim().split(/\s+/).length / 200),
+      published: moment(this.post.date_created).format("MMM Do"),
+    }
+  },
   mounted() {
     Prism.highlightAll()
-    console.log(marked(this.post.text).length)
+    console.log()
   },
 }
 </script>

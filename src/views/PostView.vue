@@ -11,11 +11,11 @@ fetchPost(route.params.slug)
 </script>
 
 <template>
-  <div>
+  <main class="wrapper">
     <p v-if="loading">Loading post...</p>
     <p v-if="error">{{ error.message }}</p>
-    <p v-if="post">
+    <article v-if="post">
       <post :post="post"></post>
-    </p>
-  </div>
+    </article>
+  </main>
 </template>
