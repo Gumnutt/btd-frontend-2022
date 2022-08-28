@@ -14,7 +14,7 @@ export const usePostStore = defineStore({
       this.posts = []
       this.loading = true
       try {
-        this.posts = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items/posts?sort=date_created`)
+        this.posts = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items/posts?sort=-date_created`)
           .then((response) => response.json())
           .then((r) => r.data)
       } catch (error) {

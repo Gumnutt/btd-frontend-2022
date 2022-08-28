@@ -42,7 +42,7 @@ props?.imageIds.forEach(async (id) => {
   <picture>
     <template v-for="image in images" :key="image.id">
       <source v-if="!['jpg', 'jpeg'].includes(image.type)" :srcset="image.url" :type="image.mimetype" />
-      <img v-else :alt="image.alt ? image.alt : null" loading="lazy" :src="image.url" />
+      <img v-else :alt="image.alt ? image.alt : null" :src="image.url" />
     </template>
     <div v-if="hasDetail" class="hero--detail"></div>
   </picture>

@@ -28,7 +28,8 @@
       }
     }
   }
-  img {
+  img,
+  .alert {
     grid-column: 2/5;
   }
   pre {
@@ -55,5 +56,22 @@
     background: var(--bg-color);
     border-radius: var(--radius-3);
     color: var(--syntax-txt);
+  }
+  p {
+    code {
+      position: relative;
+      display: inline;
+      font-family: "Space Mono", monospace;
+      font-size: 0.9em;
+      letter-spacing: -0.5px;
+      padding: 3px 6px;
+      margin: 1px -1px;
+      background: rgba(115, 125, 140, 0.17);
+      border-radius: 3px;
+    }
+  }
+  iframe {
+    grid-column: 2/5;
+    margin-top: var(--rhythm);
   }
 }

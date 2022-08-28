@@ -24,7 +24,6 @@
     width: calc(100% + var(--size-5) * 2);
     height: calc(100% + var(--size-10) * 2);
     background: var(--gray-1);
-
     @media (--OSdark) {
       background: var(--gray-8);
     }

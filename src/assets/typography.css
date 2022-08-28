@@ -35,6 +35,9 @@ p {
   line-height: var(--font-lineheight-4);
 }
 
-:where(a[href]):visited {
-  color: currentColor;
+a {
+  color: var(--blue-6);
+  @media (--OSdark) {
+    color: var(--yellow-5);
+  }
 }
