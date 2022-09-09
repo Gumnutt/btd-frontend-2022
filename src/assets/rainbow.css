@@ -30,12 +30,14 @@
 }
 
 .rainbow {
-  background: linear-gradient(var(--angle-1), hsla(0 100% 50% / 80%), hsla(0 100% 50% / 0) 75%),
-    linear-gradient(var(--angle-2), hsla(60 100% 50% / 80%), hsla(60 100% 50% / 0) 75%),
-    linear-gradient(var(--angle-3), hsla(120 100% 50% / 80%), hsla(120 100% 50% / 0) 75%),
-    linear-gradient(var(--angle-4), hsla(180 100% 50% / 80%), hsla(180 100% 50% / 0) 75%),
-    linear-gradient(var(--angle-5), hsla(240 100% 50% / 80%), hsla(240 100% 50% / 0) 75%),
-    linear-gradient(var(--angle-6), hsla(300 100% 50% / 80%), hsla(300 100% 50% / 0) 75%);
+  background: var(--gradient-18);
+  background: linear-gradient(var(--angle-1, 0deg), hsla(0 100% 50% / 80%), hsla(0 100% 50% / 0) 75%),
+    linear-gradient(var(--angle-2, 60deg), hsla(60 100% 50% / 80%), hsla(60 100% 50% / 0) 75%),
+    linear-gradient(var(--angle-3, 120deg), hsla(120 100% 50% / 80%), hsla(120 100% 50% / 0) 75%),
+    linear-gradient(var(--angle-4, 180deg), hsla(180 100% 50% / 80%), hsla(180 100% 50% / 0) 75%),
+    linear-gradient(var(--angle-5, 240deg), hsla(240 100% 50% / 80%), hsla(240 100% 50% / 0) 75%),
+    linear-gradient(var(--angle-6, 300deg), hsla(300 100% 50% / 80%), hsla(300 100% 50% / 0) 75%);
+
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
