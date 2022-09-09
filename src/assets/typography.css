@@ -41,3 +41,8 @@ a {
     color: var(--yellow-5);
   }
 }
+
+ul {
+  margin-top: var(--rhythm);
+  margin-left: var(--rhythm);
+}

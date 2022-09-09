@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
+import NotFoundView from "../views/NotFoundView.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +9,10 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      beforeEnter: () => {
+        let customStyle = window.sessionStorage.getItem("customStyle")
+        document.getElementsByTagName("html")[0].setAttribute("class", customStyle)
+      },
     },
     {
       path: "/posts",
@@ -15,7 +20,26 @@ const router = createRouter({
       component: () => import("../views/PostsView.vue"),
     },
     { path: "/post/:slug", name: "post", component: () => import("../views/PostView.vue"), props: true },
+    {
+      path: "/%F0%9F%8C%88",
+      beforeEnter: (to, from, next) => {
+        window.sessionStorage.setItem("customStyle", "rainbow")
+        next("/")
+      },
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      beforeEnter: (to, from, next) => {
+        next("/404")
+      },
+    },
+    { path: "/404", name: "404", component: NotFoundView },
   ],
 })
+
+router.resolve({
+  name: "404",
+  params: { pathMatch: ["not", "found"] },
+}).href
 
 export default router
