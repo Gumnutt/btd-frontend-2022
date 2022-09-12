@@ -37,7 +37,8 @@ body {
 }
 
 .wrapper {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
   max-width: 54ch;
   @media (--md-n-above) {

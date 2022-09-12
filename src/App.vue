@@ -6,8 +6,8 @@ console.log(window.localStorage.getItem("customStyle"))
 
 <template>
   <div :class="customStyle">
-    <header class="wrapper">
-      <nav>
+    <header>
+      <nav class="wrapper">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/posts">Posts</RouterLink>
       </nav>

@@ -28,6 +28,13 @@ const router = createRouter({
       },
     },
     {
+      path: "/%F0%9F%8E%A8",
+      beforeEnter: (to, from, next) => {
+        window.sessionStorage.setItem("customStyle", "popart")
+        next("/")
+      },
+    },
+    {
       path: "/:pathMatch(.*)*",
       beforeEnter: (to, from, next) => {
         next("/404")

@@ -1,6 +1,7 @@
 header {
   text-align: center;
   color: var(--gray-9);
+  margin-bottom: var(--size-10);
   nav {
     display: flex;
     justify-content: end;
