@@ -26,8 +26,5 @@ fetchPosts()
         <PostCard v-for="post in posts" :key="post.slug" :post="post" />
       </template>
     </ul>
-    <!-- <template v-if="posts">
-      <PostCard v-for="post in posts" :key="post.slug" :post="post" />
-    </template> -->
   </main>
 </template>

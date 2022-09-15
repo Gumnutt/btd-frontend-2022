@@ -3,17 +3,32 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: var(--size-8);
-  padding: 0 var(--size-5);
   margin: var(--size-8) 0;
   align-items: center;
   @media (--md-n-above) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    padding: 0 var(--size-10);
-    margin: var(--size-11) 0;
+    margin: 0;
+    min-height: 100vh;
+  }
+  .hero--text {
+    @media (--md-n-above) {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: var(--size-7);
+      padding-bottom: var(--size-7);
+    }
+  }
+  .hero--text-small {
+    font-size: var(--font-size-0);
   }
   .hero--intro {
     --font-size: var(--font-size-3);
+    @media (--md-n-above) {
+      margin-top: 0;
+    }
     span {
       @media (--motionOK) {
         animation: wave 2.5s 0.6s infinite;

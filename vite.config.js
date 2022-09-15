@@ -28,7 +28,13 @@ export default defineConfig({
     vueJsx(),
     VitePluginFonts({
       google: {
-        families: ["Nunito", "Space Mono"],
+        families: [
+          "Space Mono",
+          {
+            name: "Nunito",
+            styles: "wght@400;700",
+          },
+        ],
       },
     }),
   ],
