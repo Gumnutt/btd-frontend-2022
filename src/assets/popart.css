@@ -11,6 +11,14 @@
       background-image: repeating-linear-gradient(-45deg, white, white 10px, black 10px, black 20px);
       scale: calc(1 + var(--scale));
     }
+    .hero--intro {
+      background: white;
+      width: fit-content;
+      padding: 0.4rem;
+    }
+    .hero--text {
+      padding-top: calc(var(--size-7) - 0.4rem);
+    }
   }
   header {
     margin-left: calc(50% - 50vw);
