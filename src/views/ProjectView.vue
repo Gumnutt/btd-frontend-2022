@@ -11,7 +11,7 @@ fetchProject(route.params.slug)
 </script>
 
 <template>
-  <main class="wrapper">
+  <main class="project">
     <p v-if="loading">Loading project...</p>
     <p v-if="error">{{ error.message }}</p>
     <article v-if="project">

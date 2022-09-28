@@ -14,7 +14,7 @@ export const useProjectStore = defineStore({
       this.projects = []
       this.loading = true
       try {
-        this.projects = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items/Projects?sort=-date_created`)
+        this.projects = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items/projects`)
           .then((response) => response.json())
           .then((r) => r.data)
       } catch (error) {
@@ -27,7 +27,7 @@ export const useProjectStore = defineStore({
       this.project = null
       this.loading = true
       try {
-        this.project = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items/Projects?filter[slug]=${slug}`)
+        this.project = await fetch(`${import.meta.env.VITE_API_BASE_URL}/items/projects?filter[slug]=${slug}`)
           .then((response) => response.json())
           .then((r) => r.data[0])
       } catch (error) {

@@ -3,8 +3,6 @@ import { ref } from "vue"
 import { RouterLink } from "vue-router"
 import { storeToRefs } from "pinia"
 import { marked } from "marked"
-import DOMPurify from "dompurify"
-import Markdown from "vue3-markdown-it"
 import Prism from "prismjs"
 import moment from "moment"
 

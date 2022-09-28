@@ -6,11 +6,16 @@ import Vue3Prism from "vue3-prism/lib/Vue3Prism.common.js"
 import App from "./App.vue"
 import router from "./router"
 
+import { SharedElementRouteGuard, SharedElementDirective } from "v-shared-element"
+
 import "./assets/main.css"
+
+router.beforeEach(SharedElementRouteGuard)
 
 const app = createApp(App)
 
 app.use(createPinia())
+app.use(SharedElementDirective)
 app.use(router)
 app.use(Vue3Prism)
 app.directive("hoist", (el) => {
