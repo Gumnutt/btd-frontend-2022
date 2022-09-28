@@ -21,6 +21,12 @@ const router = createRouter({
     },
     { path: "/post/:slug", name: "post", component: () => import("../views/PostView.vue"), props: true },
     {
+      path: "/projects",
+      name: "projects",
+      component: () => import("../views/ProjectsView.vue"),
+    },
+    { path: "/project/:slug", name: "project", component: () => import("../views/ProjectView.vue"), props: true },
+    {
       path: "/%F0%9F%8C%88",
       beforeEnter: (to, from, next) => {
         window.sessionStorage.setItem("customStyle", "rainbow")

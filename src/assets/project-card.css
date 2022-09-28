@@ -1,0 +1,20 @@
+.project--card {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  padding: var(--size-5);
+  border-radius: var(--radius-3);
+  color: unset;
+  @media (--OSdark) {
+    background-color: var(--gray-9);
+  }
+  img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: calc(var(--size-5) - var(--radius-3));
+  }
+}
