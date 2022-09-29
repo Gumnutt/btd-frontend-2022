@@ -2,6 +2,7 @@
 import { ref } from "vue"
 import { storeToRefs } from "pinia"
 import { usePostStore } from "../stores/posts"
+import ReadButton from "@/components/ReadButton.vue"
 
 const { posts, loading, error } = storeToRefs(usePostStore())
 const { fetchPosts } = usePostStore()
@@ -20,16 +21,13 @@ defineProps(["subtitle", "summary"])
       </div>
     </div>
     <ul>
-      <li v-for="(post, i) in posts" :key="i">
-        <RouterLink :to="{ name: `post`, params: { slug: post.slug, id: post.id } }">
+      <li v-for="{ title, short_content, slug, id } in posts" :key="id">
+        <RouterLink :to="{ name: `post`, params: { slug: slug, id: id } }">
           <div class="wrapper">
             <div class="list--item">
-              <h3>{{ post.title }}</h3>
-              <p>{{ post.short_content }}</p>
-              <div class="read--button">
-                <p>Read</p>
-                <p>Read</p>
-              </div>
+              <h3>{{ title }}</h3>
+              <p>{{ short_content }}</p>
+              <ReadButton buttonText="Read" />
             </div>
           </div>
         </RouterLink>

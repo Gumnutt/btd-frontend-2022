@@ -55,8 +55,9 @@ export default {
           }
         })
       })
-
-      observer.observe(hero)
+      if (hero) {
+        observer.observe(hero)
+      }
     },
   },
 }

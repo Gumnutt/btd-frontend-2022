@@ -1,4 +1,5 @@
 <script setup>
+import ReadButton from "@/components/ReadButton.vue"
 let baseURL = import.meta.env.VITE_API_BASE_URL
 defineProps(["project"])
 </script>
@@ -16,8 +17,13 @@ defineProps(["project"])
           }"
         />
       </div>
-      <h3>{{ project.title }}</h3>
-      <p>{{ project.short_description }}</p>
+      <div class="project--content">
+        <div class="project--text">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.short_description }}</p>
+        </div>
+        <ReadButton buttonText="View" />
+      </div>
     </RouterLink>
   </li>
 </template>
