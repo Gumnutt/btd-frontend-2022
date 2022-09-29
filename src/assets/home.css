@@ -1,3 +1,13 @@
+.home {
+  @media (--md-n-above) {
+    position: relative;
+    top: calc(var(--size-10) * -1);
+    width: 100%;
+  }
+}
+.hero--intro {
+  margin-top: calc((var(--size-7) + 86px) * -1);
+}
 .home--title {
   display: grid;
   grid-template-columns: 1fr 1fr;

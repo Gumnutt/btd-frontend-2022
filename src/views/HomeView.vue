@@ -38,14 +38,19 @@ export default {
       let scrollTop = window.scrollY
       let docHeight = document.body.offsetHeight
       let winHeight = window.innerHeight
-      let scrollPercent = scrollTop / (winHeight - docHeight)
+      let scrollPercent = (scrollTop / (docHeight - winHeight)) * 10
 
       let observer = new IntersectionObserver((entries, obs) => {
         entries.forEach((entry) => {
           if (entry.intersectionRatio < 0.5) {
             scaleElement.style.webkitAnimationPlayState = "paused"
-            scaleElement.style.transform = `scale(${scrollPercent * 10})`
+            scaleElement.style.transform = `scale(${scrollPercent * 1.5})`
           } else {
+            if (scrollPercent > 1) {
+              scaleElement.style.transform = `scale(${scrollPercent})`
+            } else {
+              scaleElement.style.transform = `scale(1)`
+            }
             scaleElement.style.webkitAnimationPlayState = "running"
           }
         })

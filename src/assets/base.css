@@ -31,6 +31,9 @@ html {
     color: var(--gray-1);
   }
 }
+#app {
+  overflow-y: hidden;
+}
 
 .wrapper {
   margin-left: auto;
@@ -74,14 +77,5 @@ button {
   &:active {
     box-shadow: 0px 0px 0px 0px;
     translate: 0px 0px;
-  }
-}
-
-.home {
-  @media (--md-n-above) {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -1;
   }
 }
