@@ -44,7 +44,7 @@ export default {
         entries.forEach((entry) => {
           if (entry.intersectionRatio < 0.5) {
             scaleElement.style.webkitAnimationPlayState = "paused"
-            scaleElement.style.transform = `scale(${scrollPercent * 1.5})`
+            scaleElement.style.transform = `scale(${scrollPercent})`
           } else {
             if (scrollPercent > 1) {
               scaleElement.style.transform = `scale(${scrollPercent})`
