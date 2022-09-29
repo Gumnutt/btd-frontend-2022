@@ -6,9 +6,14 @@ import { RouterLink, RouterView } from "vue-router"
   <div :class="customStyle">
     <header>
       <nav class="wrapper">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/posts">Posts</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
+        <div>
+          <h1 class="hero--intro">Hey, I'm Brynn <span>👋</span></h1>
+        </div>
+        <div class="links">
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/posts">Posts</RouterLink>
+          <RouterLink to="/projects">Projects</RouterLink>
+        </div>
       </nav>
     </header>
     <router-view v-slot="{ Component }">

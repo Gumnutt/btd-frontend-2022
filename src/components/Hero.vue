@@ -10,7 +10,8 @@ defineProps(["subtitle", "title", "description", "image", "images"])
 <template>
   <section class="hero">
     <div class="hero--text">
-      <h1 v-html="subtitle" class="hero--intro"></h1>
+      <!-- <h1 v-html="subtitle" class="hero--intro"></h1> -->
+      <div></div>
       <div>
         <h2 class="hero--title">{{ title }}</h2>
         <p class="hero--subtext">{{ description }}</p>
