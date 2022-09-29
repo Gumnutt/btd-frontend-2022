@@ -24,3 +24,35 @@ fetchPosts()
     <posts-lists :subtitle="data.posts_subtitle" :summary="data.posts_detail"></posts-lists>
   </main>
 </template>
+
+<script>
+export default {
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll)
+  },
+  methods: {
+    handleScroll() {
+      const scaleElement = document.getElementsByClassName("hero--detail")[0]
+      const hero = document.getElementsByClassName("hero")[0]
+
+      let scrollTop = window.scrollY
+      let docHeight = document.body.offsetHeight
+      let winHeight = window.innerHeight
+      let scrollPercent = scrollTop / (winHeight - docHeight)
+
+      let observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio < 0.5) {
+            scaleElement.style.webkitAnimationPlayState = "paused"
+            scaleElement.style.transform = `scale(${scrollPercent * 10})`
+          } else {
+            scaleElement.style.webkitAnimationPlayState = "running"
+          }
+        })
+      })
+
+      observer.observe(hero)
+    },
+  },
+}
+</script>
