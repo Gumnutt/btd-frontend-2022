@@ -40,17 +40,26 @@ export default {
       let winHeight = window.innerHeight
       let scrollPercent = (scrollTop / (docHeight - winHeight)) * 10
 
+      if (this.mobile) {
+        if (scrollPercent > 1) {
+          scaleElement.style.transform = `scale(${scrollPercent + scrollPercent - 1})`
+        } else {
+          scaleElement.style.transform = `scale(1)`
+        }
+      } else {
+        console.log("desktop")
+        if (scrollPercent > 1) {
+          scaleElement.style.transform = `scale(${scrollPercent})`
+        } else {
+          scaleElement.style.transform = `scale(1)`
+        }
+      }
+
       let observer = new IntersectionObserver((entries, obs) => {
         entries.forEach((entry) => {
           if (entry.intersectionRatio < 0.5) {
             scaleElement.style.webkitAnimationPlayState = "paused"
-            scaleElement.style.transform = `scale(${scrollPercent})`
           } else {
-            if (scrollPercent > 1) {
-              scaleElement.style.transform = `scale(${scrollPercent})`
-            } else {
-              scaleElement.style.transform = `scale(1)`
-            }
             scaleElement.style.webkitAnimationPlayState = "running"
           }
         })

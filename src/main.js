@@ -14,6 +14,11 @@ router.beforeEach(SharedElementRouteGuard)
 
 const app = createApp(App)
 
+addEventListener("resize", () => {
+  app.config.globalProperties.mobile = window.innerWidth < 768
+})
+app.config.globalProperties.mobile = window.innerWidth < 768
+
 app.use(createPinia())
 app.use(SharedElementDirective)
 app.use(router)
