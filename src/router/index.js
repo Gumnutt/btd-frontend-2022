@@ -14,10 +14,7 @@ const router = createRouter({
         if (customStyle) {
           document.getElementsByTagName("html")[0].setAttribute("class", customStyle)
         }
-        document.getElementById("app").classList.add("home--page")
-      },
-      onBeforeRouteLeave: () => {
-        document.getElementById("app").classList.remove("home--page")
+        // document.getElementById("app").classList.add("home--page")
       },
     },
     {

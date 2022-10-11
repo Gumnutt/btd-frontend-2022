@@ -28,7 +28,8 @@ fetchPosts()
 <script>
 export default {
   mounted() {
-    window.addEventListener("scroll", this.handleScroll)
+    console.log(this.$route.name)
+    if (this.$route.name == "home") return window.addEventListener("scroll", this.handleScroll)
   },
   methods: {
     handleScroll() {
@@ -43,13 +44,16 @@ export default {
       if (this.mobile) {
         if (scrollPercent > 1) {
           scaleElement.style.transform = `scale(${scrollPercent + scrollPercent - 1})`
+        } else if (scrollPercent >= 8) {
+          scaleElement.style.transform = `scale(8)`
         } else {
           scaleElement.style.transform = `scale(1)`
         }
       } else {
-        console.log("desktop")
         if (scrollPercent > 1) {
           scaleElement.style.transform = `scale(${scrollPercent})`
+        } else if (scrollPercent >= 8) {
+          scaleElement.style.transform = `scale(8)`
         } else {
           scaleElement.style.transform = `scale(1)`
         }

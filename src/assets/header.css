@@ -3,6 +3,7 @@ header {
   color: var(--gray-9);
   margin-bottom: var(--size-10);
   position: relative;
+  z-index: 1;
   nav {
     display: flex;
     justify-content: space-between;

@@ -2,7 +2,8 @@
 import { useRoute } from "vue-router"
 import { storeToRefs } from "pinia"
 import { useProjectStore } from "../stores/projects"
-import Project from "../components/Project.vue"
+import Project from "@/components/Project.vue"
+import Loader from "@/components/Loader.vue"
 defineProps(["id"])
 const route = useRoute()
 const { project, loading, error } = storeToRefs(useProjectStore())
@@ -12,7 +13,7 @@ fetchProject(route.params.slug)
 
 <template>
   <main class="project">
-    <p v-if="loading">Loading project...</p>
+    <div v-if="loading"><loader /></div>
     <p v-if="error">{{ error.message }}</p>
     <article v-if="project">
       <project :project="project"></project>

@@ -1,9 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router"
+import Loader from "./components/Loader.vue"
 </script>
 
 <template>
-  <div :class="customStyle">
+  <div :class="`${$route.name}--page`">
     <header>
       <nav class="wrapper">
         <div>
@@ -16,9 +17,9 @@ import { RouterLink, RouterView } from "vue-router"
         </div>
       </nav>
     </header>
-    <router-view v-slot="{ Component }">
+    <router-view v-slot="{ Component }" :key="$route.name">
       <transition name="fade" @before-leave="beforeLeave" @after-leave="afterLeave" appear>
-        <component :is="Component" />
+        <component :is="Component" :key="`${$route.name}--component`" />
       </transition>
     </router-view>
   </div>
@@ -41,6 +42,13 @@ export default {
       el.style.left = ""
       el.style.right = ""
       el.style.zIndex = ""
+    },
+  },
+  computed: {
+    customStyle() {
+      return {
+        "is-mobile": this.mobile,
+      }
     },
   },
 }
